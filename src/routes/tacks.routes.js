@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { db } from "../dbconection";
+import { db } from "../dbconection.js";
 
 const taskRouter = Router()
 
