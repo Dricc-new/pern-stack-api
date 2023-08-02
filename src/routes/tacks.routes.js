@@ -1,32 +1,21 @@
 import { Router } from "express";
-import { db } from "../dbconection.js";
+import { deleteTask, getTask, indexTask, storeTask, updateTask } from "../controllers/tacks.controller.js";
 
 const taskRouter = Router()
 
 // Returning all task on database
-taskRouter.get('/tasks',async (req, res) => {
-    // const result = await db.query('SELECT NOW()')
-    res.json('exited')
-})
+taskRouter.get('/tasks', indexTask)
 
 // This route returns a task by its id.
-taskRouter.get('/tasks/1', (req, res) => {
-    res.send('A tasks')
-})
+taskRouter.get('/tasks/1', getTask)
 
 // This route create a task on database
-taskRouter.post('/tasks', (req, res) => {
-    res.send('Create task')
-})
+taskRouter.post('/tasks', storeTask)
 
 // This route remove a task on database
-taskRouter.delete('/tasks', (req, res) => {
-    res.send('Delete task')
-})
+taskRouter.delete('/tasks', deleteTask)
 
 // This route update a task on database
-taskRouter.put('/tasks', (req, res) => {
-    res.send('Update task')
-})
+taskRouter.put('/tasks', updateTask)
 
 export default taskRouter
