@@ -1,10 +1,12 @@
 import { Router } from "express";
+import { db } from "../dbconection";
 
 const taskRouter = Router()
 
 // Returning all task on database
-taskRouter.get('/tasks', (req, res) => {
-    res.send('List tasks')
+taskRouter.get('/tasks',async (req, res) => {
+    // const result = await db.query('SELECT NOW()')
+    res.json('exited')
 })
 
 // This route returns a task by its id.
