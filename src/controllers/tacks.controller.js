@@ -46,7 +46,6 @@ export async function storeTask(req, res) {
 //  Remove task
 export async function deleteTask(req, res) {
     const { id } = req.params
-
     try {
         const result = await db.query('DELETE FROM task WHERE id = $1', [id])
         if (result.rowCount === 0)
@@ -59,8 +58,13 @@ export async function deleteTask(req, res) {
 
 // Update task
 export async function updateTask(req, res) {
+    const { id } = req.params
+    const { title, description, date } = req.body
     try {
-        res.send('Update task')
+        const result = await db.query('UPDATE task SET title = $1, description = $2, date = $3 WHERE id = $4 RETURNING *', [title, description, date, id])
+        if (result.rowCount === 0)
+            return res.status(404).json({ mesage: 'Task not found' })
+        res.json(result.rows[0])
     } catch (err) {
         res.json(err.message)
     }

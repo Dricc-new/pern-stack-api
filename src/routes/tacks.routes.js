@@ -16,6 +16,6 @@ taskRouter.post('/tasks', storeTask)
 taskRouter.delete('/tasks/:id', deleteTask)
 
 // This route update a task on database
-taskRouter.put('/tasks', updateTask)
+taskRouter.put('/tasks/:id', updateTask)
 
 export default taskRouter
