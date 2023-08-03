@@ -7,13 +7,13 @@ const taskRouter = Router()
 taskRouter.get('/tasks', indexTask)
 
 // This route returns a task by its id.
-taskRouter.get('/tasks/1', getTask)
+taskRouter.get('/tasks/:id', getTask)
 
 // This route create a task on database
 taskRouter.post('/tasks', storeTask)
 
 // This route remove a task on database
-taskRouter.delete('/tasks', deleteTask)
+taskRouter.delete('/tasks/:id', deleteTask)
 
 // This route update a task on database
 taskRouter.put('/tasks', updateTask)
