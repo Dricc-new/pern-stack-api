@@ -2,10 +2,12 @@ import express from "express";
 import { PORT } from "./config.js";
 import morgan from "morgan";
 import taskRouter from "./routes/tacks.routes.js";
+import cors from 'cors'
 
 const app = express()
 
 app.use(morgan('dev'))
+app.use(cors())
 app.use(express.json())
 
 // Routers
