@@ -46,19 +46,22 @@ export async function storeTask(req, res) {
 //  Remove task
 export async function deleteTask(req, res) {
     const { id } = req.params
-    
-    try{
-        res.send('Delete task')
-    }catch(err){
+
+    try {
+        const result = await db.query('DELETE FROM task WHERE id = $1', [id])
+        if (result.rowCount === 0)
+            return res.status(404).json({ mesage: 'Task not found' })
+        res.sendStatus(204)
+    } catch (err) {
         res.json(err.message)
     }
 }
 
 // Update task
 export async function updateTask(req, res) {
-    try{
+    try {
         res.send('Update task')
-    }catch(err){
+    } catch (err) {
         res.json(err.message)
     }
 }
