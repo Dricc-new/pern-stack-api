@@ -10,6 +10,11 @@ app.use(express.json())
 
 // Routers
 app.use(taskRouter)
+app.use((err, req, res, next) => {
+    return res.json({
+        message: err.message
+    })
+})
 
 app.listen(PORT)
 console.log('Server on port', PORT)
