@@ -1,5 +1,5 @@
 # PERN-STACK-API
-Small backend example for the PERN-STACK project, in this we use Express to mount the server and PostgreSQL as the database.
+Small backend example for the PERN-STACK project, in this we use Express to mount the server and PostgreSQL as the database. The client proyect is [here](https://github.com/Dricc-new/PERN-STACK)
 ## Required
 - PostgreSQL
 - NodeJS 20.5.0+
