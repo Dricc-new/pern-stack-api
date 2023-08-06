@@ -10,10 +10,10 @@ Small backend example for the PERN-STACK project, in this we use Express to moun
 - pg 8.11.2+
 ## Routes
 - ### /tasks 
-    GET : Returning all task on database
-    POST : This route create a task on database
+    - GET : Returning all task on database
+    - POST : This route create a task on database
 
 - ### /tasks/:id
-    GET : This route returns a task by its id.
-    PUT : This route update a task on database
-    DELETE : This route remove a task on database
+    - GET : This route returns a task by its id.
+    - PUT : This route update a task on database
+    - DELETE : This route remove a task on database
